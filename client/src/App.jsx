@@ -1,8 +1,9 @@
 import React from 'react'
-
+import {  RouterProvider } from 'react-router'
+import {Router} from './Router'
 const App = () => {
   return (
-    <div className='bg-red-100'>App</div>
+    <RouterProvider router={Router}/>
   )
 }
 

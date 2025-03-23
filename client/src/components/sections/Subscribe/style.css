@@ -1,0 +1,22 @@
+.head{
+    font-size: 40px;
+    margin: 0 0 10px;
+    margin-bottom: 40px;
+
+}
+
+.subbtn{
+    background: #c98060;
+    font-size: 20px;
+    font-family: Futura;
+    font-weight: 400;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    color: white;
+    padding: 10px 40px;
+}
+
+.subinput{
+    background-color: #f6f6f6;
+}
