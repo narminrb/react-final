@@ -1,6 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import './style.css'
+import { useAuthStore } from '../../store/AuthStore';
+import { getAPi, getAPiData } from '../../http/api';
 
 const Header = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const [userData, setUserData] = useState(null);
+
+    const {authData} = useAuthStore((state) => state)
+
+    const UserData = authData()
+    console.log("User", UserData)
+    const handleDropdownToggle = () => {
+        setIsDropdownOpen(prevState => !prevState);
+    };
+    useEffect(() => {
+        if (UserData?.token) {
+            getAPi("user", {
+                headers: {
+                    Authorization: `${UserData.token}`
+                }
+            }).then((data) => {
+                setUserData(data)
+            })
+        }
+    }, [UserData?.token])
+    console.log("UserDataa", UserData)
   return (
     <div className="container mx-auto">
         <nav className="bg-white border-gray-200 py-10 dark:bg-gray-900">
@@ -19,7 +45,31 @@ const Header = () => {
                 <ul className='flex gap-4 text-2xl font-normal'>
                     <li><i className="ri-search-line"></i></li>
                     <li><i className="ri-shopping-bag-4-line"></i></li>
-                    <li><i className="ri-user-3-line"></i></li>
+                    <li className="relative">
+                    <i className="ri-user-3-line" onClick={handleDropdownToggle}></i>
+                    {isDropdownOpen && (
+                        <div className="dropdown-content">
+                            <p className="account">Account</p>
+                            <hr />
+                            <ul>
+                                {
+                                    !UserData?.token && <>
+                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="/signin">Create Account</a></li></>
+                                }
+                                {
+                                    UserData?.token && <>
+                                    <li><a href="/dashboard">{UserData?.user?.username}</a></li>
+                                    <button className='bg-black text-white rounded-full w-10 h-10 '>
+                                    {UserData?.user?.username?.charAt(0)}
+                                </button>
+                                    <li><a href="/logout">Logout</a></li>
+                                    </>
+                                }
+                            </ul>
+                        </div>
+                    )}
+                </li>
                 </ul>
             </div>
             <button data-collapse-toggle="mobile-menu-2" type="button"

@@ -14,7 +14,6 @@ const Banner = () => {
         queryFn: async () => await getAPiData('banners?populate=*')
     })
 
-    console.log(bannerData)
     return (
 
     <div className="container mx-auto">

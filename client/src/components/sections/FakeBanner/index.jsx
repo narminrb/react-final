@@ -17,7 +17,7 @@ const HomeBanner = () => {
         queryFn: async () => await getAPiData('banners?populate=*')
     });
 
-    console.log('API Response:', bannerData);
+    // console.log('API Response:', bannerData);
 
     //console.log(`http://localhost:1337${el.attributes.image.data.attributes.url}`);
 

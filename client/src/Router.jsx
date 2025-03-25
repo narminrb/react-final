@@ -4,6 +4,8 @@ import Blog from "./pages/blog";
 import Layout from "./layout";
 import BlogDetail from "./pages/blogDetail";
 import Shop from "./pages/shop";
+import Login from "./pages/login";
+import Signin from "./pages/signin";
 
 export const Router = createBrowserRouter([
     {
@@ -30,6 +32,16 @@ export const Router = createBrowserRouter([
                 path: '/shop',
                 id:'shop',
                 element: <Shop/>,
+            },
+            {
+                path: '/login',
+                id:'login',
+                element: <Login/>,
+            },
+            {
+                path: '/signin',
+                id:'signin',
+                element: <Signin/>,
             }
             
         ]

@@ -6,6 +6,7 @@ import CustomSwiper from '../../components/sections/ProductSwiper'
 import New from '../../components/sections/New'
 import FeedbackSection from '../../components/sections/FeedbackSection'
 import InstagramSect from '../../components/sections/InstagramSect'
+import { withAuthCheck } from '../../HOC/AuthCheck'
 
 const Home = () => {
   return (
@@ -20,4 +21,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default withAuthCheck(Home)
