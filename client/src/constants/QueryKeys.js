@@ -6,5 +6,6 @@ export const QueryKeys = {
     INSTACARDS:'instacards',
     SHOPRIGHTS:"shoprights", 
     COLORS: "colors",
-    BLOGS: "blogs"
+    BLOGS: "blogs",
+    SIZES: "sizes",
   };

@@ -44,7 +44,7 @@ const Header = () => {
             <div className='flex'>
                 <ul className='flex gap-4 text-2xl font-normal'>
                     <li><i className="ri-search-line"></i></li>
-                    <li><i className="ri-shopping-bag-4-line"></i></li>
+                    <li><a href="/checkout"> <i className="ri-shopping-bag-4-line"></i></a></li>
                     <li className="relative">
                     <i className="ri-user-3-line" onClick={handleDropdownToggle}></i>
                     {isDropdownOpen && (

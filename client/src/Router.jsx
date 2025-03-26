@@ -6,6 +6,7 @@ import BlogDetail from "./pages/blogDetail";
 import Shop from "./pages/shop";
 import Login from "./pages/login";
 import Signin from "./pages/signin";
+import CheckOut from "./pages/checkout";
 
 export const Router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ export const Router = createBrowserRouter([
                 path: '/signin',
                 id:'signin',
                 element: <Signin/>,
+            },
+            {
+                path:'/checkout',
+                id:'checkout',
+                element: <CheckOut/>,
             }
             
         ]

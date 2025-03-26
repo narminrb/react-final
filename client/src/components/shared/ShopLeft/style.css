@@ -10,28 +10,26 @@
     flex-direction: column;
     gap: 12px;
     }
-.categories{
-    color:  #807E7E;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 22px; 
+.categorie{
+   button{
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+    padding: 2px 10px;
+    border-radius: 30px;
+    line-height: 30px;
+    font-size: 18px;
+   }
 }
 .stars{
     color: red;
 }
 
 .catname{
-    color:  #121212;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: Inter;
-    font-size: 16px;
-    padding: 8px 0;
+    cursor: pointer;
+    padding-bottom: 20px;
+    position: relative;
+    font-size: 22px;
+    font-weight: 400;
     font-style: normal;
-    font-weight: 600;
-    line-height: 26px; 
 }
 
 .filtdiv{
