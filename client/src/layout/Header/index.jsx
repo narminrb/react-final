@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './style.css'
 import { useAuthStore } from '../../store/AuthStore';
 import { getAPi, getAPiData } from '../../http/api';
+import Search from "../../components/sections/Search";
 
 const Header = () => {
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const [userData, setUserData] = useState(null);
@@ -43,7 +45,12 @@ const Header = () => {
 
             <div className='flex'>
                 <ul className='flex gap-4 text-2xl font-normal'>
-                    <li><i className="ri-search-line"></i></li>
+                    <li><i
+            className="ri-search-line"
+            style={{ cursor: "pointer" }}
+            onClick={() => setIsSearchOpen(true)}
+          ></i></li>
+            {isSearchOpen && <Search closeSearch={() => setIsSearchOpen(false)} />}
                     <li><a href="/checkout"> <i className="ri-shopping-bag-4-line"></i></a></li>
                     <li className="relative">
                     <i className="ri-user-3-line" onClick={handleDropdownToggle}></i>
