@@ -21,7 +21,7 @@ const Blogs = () => {
     if (blogIsError) return <p>Error: {error.message}</p>;
   return (
     <div className='container mx-auto my-10  max-w-screen-xl'>
-        <div className='grid grid-cols-3 gap-7'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7'>
             { blogData && blogData?.data.map((el,index) => (
                 <Link to={`/blog/${el.id}`} key={el.id}>
                 <BlogCard

@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import './style.css'
 import { useCartContext } from '../../../providers/CartContext';
 import { toast } from 'sonner';
+import { Link } from 'react-router';
 
 const ShopRight = () => {
       const [pageSize, setPageSize] = useState(9);
@@ -215,8 +216,9 @@ const [priceTo, setPriceTo] = useState('');
           </div>
   <div className='col-span-3'>
   <div className="mx-auto">
-    <main className="grid grid-cols-3 items-center  gap-10">
+    <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {shopData && shopData?.data.map((el, index) => (
+        <Link to={`/shop/${el.id}`} key={el.id}>
         <div key={index}>
         <div className='shopimage'>
             <img className="mb-7 rounded-xl"  src={`http://localhost:1337${el?.image?.url}`}/>
@@ -240,6 +242,7 @@ const [priceTo, setPriceTo] = useState('');
 
         </div>
       </div>
+      </Link>
       ))}
     </main>
     <div>

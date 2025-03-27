@@ -12,7 +12,7 @@ const New = () => {
     //console.log(newData)
   return (
     <div className='container mx-auto max-w-screen-xl'>
-       <div className='grid grid-cols-3 gap-4'>
+       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
        {newData && newData?.data.map((el,index) => (
             <NewCard key={index} 
             image={`http://localhost:1337${el?.image?.url}`}

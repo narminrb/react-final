@@ -21,4 +21,4 @@ const Home = () => {
   )
 }
 
-export default withAuthCheck(Home)
+export default Home

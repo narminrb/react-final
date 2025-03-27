@@ -1,5 +1,6 @@
 import React from 'react'
 import { useCartContext } from '../../providers/CartContext'
+import { withAuthCheck } from '../../HOC/AuthCheck'
 
 const CheckOut = () => {
      const { addToCart,
@@ -125,7 +126,7 @@ const CheckOut = () => {
               <button
                 className="px-8 cursor-pointer py-3.5 bg-[#f2f2f2] rounded-[43px] text-[#4c4c4c] text-sm font-semibold classNameName leading-[16px]"
               >
-                Return to shop
+                <a href="/shop">Return to shop</a>
               </button>
             </td>
             <td className="px-2 py-2" colspan="2">
@@ -146,4 +147,4 @@ const CheckOut = () => {
   )
 }
 
-export default CheckOut
+export default withAuthCheck(CheckOut)

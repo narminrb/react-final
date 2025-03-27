@@ -69,6 +69,11 @@ const HomeBanner = () => {
                  slidesPerView={1}
                  grabCursor={true} 
                  loop={true}
+                 breakpoints={{
+                    320: { slidesPerView: 1 }, 
+                    768: { slidesPerView: 1 }, 
+                    1024: { slidesPerView: 1 }, 
+                  }}
                  pagination={{ clickable: true }}
 
                  navigation={{
@@ -83,7 +88,7 @@ const HomeBanner = () => {
 
     return (
         <SwiperSlide key={index} style={{ backgroundColor }}>
-            <div className="flex items-center justify-center h-[600px]">
+            <div className="flex flex-col md:flex-row items-center justify-center h-[400px] md:h-[600px] p-6">
                 <div>
                     <div className={styles.rootItems}>
                         <div className={styles.rootElements}>
@@ -94,11 +99,11 @@ const HomeBanner = () => {
                     </div>
                 </div>
 
-                <div className="image-section w-[447px] h-[391px]">
+                <div className="image-section w-full md:w-[447px] md:h-[391px] mt-6 md:mt-0 flex justify-center">
                     <img
                         src={`http://localhost:1337${imageUrl}`}
                         alt={el?.image?.alternativeText || 'Banner Image'}
-                        className="h-full object-cover"
+                        className="w-full h-auto max-h-[300px] md:max-h-[391px] object-contain"
                     />
                 </div>
             </div>
