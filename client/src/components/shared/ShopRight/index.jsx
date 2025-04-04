@@ -6,10 +6,16 @@ import './style.css'
 import { useCartContext } from '../../../providers/CartContext';
 import { toast } from 'sonner';
 import { Link } from 'react-router';
+import firstBtn from '../../../assets/firstbtn.png'
+import secondBtn from '../../../assets/secondbtn.png'
+import thirdBtn from '../../../assets/thirdbtn.png'
+import button from '../../../assets/Button.png'
+import fourthBtn from '../../../assets/fourthbtn.png'
 
 const ShopRight = () => {
       const [pageSize, setPageSize] = useState(9);
       const [pageLimit, setPageLimit] = useState(1);
+      const [gridCount, setGridCount] = useState(3);
       const { addToCart,
         removeFromCart,
         carts,
@@ -216,14 +222,34 @@ const [priceTo, setPriceTo] = useState('');
           </div>
   <div className='col-span-3'>
   <div className="mx-auto">
-    <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className='prodheader my-4'>
+                    <div className='leftgrids'>
+                        <div className='btns'>
+                        <div 
+                        onClick={()=>setGridCount(3)}
+                        className='grids'>
+                        <img src={firstBtn} alt="" />
+                        </div>
+                        <div 
+                        onClick={()=>setGridCount(1)}
+                        className='grids'>
+                        <img src={fourthBtn} alt="" />
+                        </div>
+                        </div>
+                    </div>
+                </div>
+    <main className={`grid gap-6 grid-cols-1 ${gridCount === 2 ? 'md:grid-cols-2' : gridCount === 3 ? 'md:grid-cols-3' : 'md:grid-cols-1'}`}>
       {shopData && shopData?.data.map((el, index) => (
-        <Link to={`/shop/${el.id}`} key={el.id}>
         <div key={index}>
         <div className='shopimage'>
             <img className="mb-7 rounded-xl"  src={`http://localhost:1337${el?.image?.url}`}/>
             <div className="icon-container">
-    <div className="icon"><i className="ri-image-line"></i></div>
+    <div className="icon">
+          <Link to={`/shop/${el.id}`} key={el.id}>
+      <i className="ri-image-line">
+        </i>
+    </Link>
+        </div>
     <div className="icon"><i className="ri-heart-line"></i></div>
     <div 
     onClick={() =>{
@@ -242,7 +268,6 @@ const [priceTo, setPriceTo] = useState('');
 
         </div>
       </div>
-      </Link>
       ))}
     </main>
     <div>

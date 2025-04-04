@@ -102,10 +102,64 @@ const Header = () => {
                         className="block py-2 pl-3 pr-4 text-gray-700  rounded lg:bg-transparent  lg:p-0 dark:text-white"
                         aria-current="page">Home</a>
                 </li>
-                <li>
-                    <a href="/shop"
-                        className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Shop</a>
+                <li className="relative group">
+                    <a
+                        href="/shop"
+                        className="block py-2 pl-3 pr-4 text-gray-700  lg:bg-transparent lg:p-0 dark:text-white"
+                        aria-current="page"
+                    >
+                        Shop
+                    </a>
+                    <div className="absolute left-1/2 transform -translate-x-[35%] z-10 top-[77px] hidden w-screen max-w-5xl p-6 mt-2 bg-white shadow-lg group-hover:flex  dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+                        <div className="grid grid-cols-4 gap-8 w-full">
+                        <div>
+                            <h3 className="font-semibold mb-2">Necklaces</h3>
+                            <ul className="space-y-1 text-[#000000] font-[400] text-sm">
+                            <li><a href="#" className="hover:underline">Pendant</a></li>
+                            <li><a href="#" className="hover:underline">Choker</a></li>
+                            <li><a href="#" className="hover:underline">Layered</a></li>
+                            <li><a href="#" className="hover:underline">Chain</a></li>
+                            <li><a href="#" className="hover:underline">Pearl</a></li>
+                            <li><a href="#" className="hover:underline">Beaded</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold  mb-2">Bracelets</h3>
+                            <ul className="space-y-1 text-[#000000] font-[400] text-sm">
+                            <li><a href="#" className="hover:underline">Cuff</a></li>
+                            <li><a href="#" className="hover:underline">Charm</a></li>
+                            <li><a href="#" className="hover:underline">Beaded</a></li>
+                            <li><a href="#" className="hover:underline">Bangle</a></li>
+                            <li><a href="#" className="hover:underline">Friendship</a></li>
+                            <li><a href="#" className="hover:underline">Tennis</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold  mb-2">Earrings</h3>
+                            <ul className="space-y-1 text-[#000000] font-[400] text-sm">
+                            <li><a href="#" className="hover:underline">Stud</a></li>
+                            <li><a href="#" className="hover:underline">Hoop</a></li>
+                            <li><a href="#" className="hover:underline">Drop</a></li>
+                            <li><a href="#" className="hover:underline">Dangle</a></li>
+                            <li><a href="#" className="hover:underline">Clip-on</a></li>
+                            <li><a href="#" className="hover:underline">Threader</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold  mb-2">Gold Rings</h3>
+                            <ul className="space-y-1 text-[#000000] font-[400] text-sm">
+                            <li><a href="#" className="hover:underline">Engagement</a></li>
+                            <li><a href="#" className="hover:underline">Wedding</a></li>
+                            <li><a href="#" className="hover:underline">Statement</a></li>
+                            <li><a href="#" className="hover:underline">Stackable</a></li>
+                            <li><a href="#" className="hover:underline">Midi</a></li>
+                            <li><a href="#" className="hover:underline">Signet</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
                 </li>
+
                 <li>
                     <a href="#"
                         className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Categories </a>
